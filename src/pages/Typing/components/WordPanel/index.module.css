@@ -1,0 +1,54 @@
+.commonButton {
+  height: 3rem; /* 替换之前的 h-12 */
+  width: 30%; /* 替换之前的 w-[30%] */
+  border: 2px solid;
+  font-size: 1.125rem; /* 替换之前的 text-lg */
+  font-weight: 700; /* 替换之前的 font-bold */
+  color: white; /* 替换之前的 text-white */
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 6px rgba(0, 64, 255, 0.5); /* 添加阴影 */
+  transition: box-shadow 0.3s ease; /* 添加阴影过渡效果 */
+}
+
+.redButton {
+    background-color: rgba(220, 100, 80, 0.757);
+    border-color: rgba(220, 100, 80, 0.757);
+}
+
+.greenButton {
+  background-color: rgba(100, 180, 120, 0.757);
+  border-color: rgba(100, 180, 120, 0.757);
+}
+
+.blueButton {
+  background-color: rgba(80, 150, 200, 0.757);
+  border-color: rgba(80, 150, 200, 0.757);
+}
+
+.commonButton:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 8px 12px rgba(0, 64, 255, 0.8); /* 鼠标悬停时增加阴影 */
+}
+
+.dark .commonButton {
+    border-color: gray;
+}
+
+.dark .redButton{
+  background-color: rgba(220, 100, 80, 0.757);
+  border-color: rgba(220, 100, 80, 0.757);
+}
+
+.dark .greenButton{
+  background-color: rgba(100, 180, 120, 0.757);
+  border-color: rgba(100, 180, 120, 0.757);
+}
+
+.dark .blueButton{
+  background-color: rgba(80, 150, 200, 0.757);
+  border-color: rgba(80, 150, 200, 0.757);
+}
+
+.dark .commonButton:hover {
+  filter: brightness(1.5);
+}
