@@ -28,7 +28,7 @@ function Root() {
 
   return (
     <React.StrictMode>
-      <BrowserRouter basename={REACT_APP_DEPLOY_ENV === 'pages' ? '/deutsch-lernen-im-spiel' : ''}>
+      <BrowserRouter basename={REACT_APP_DEPLOY_ENV === 'pages' ? '/DeutschLerner' : ''}>
         <Suspense fallback={<Loading />}>
           <Routes>
             {
