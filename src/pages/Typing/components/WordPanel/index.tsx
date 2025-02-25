@@ -1,5 +1,4 @@
 import { TypingContext, TypingStateActionType, WordartType } from '../../store'
-import type { TypingState } from '../../store/type'
 import PrevAndNextWord from '../PrevAndNextWord'
 import Progress from '../Progress'
 import Phonetic from './components/Phonetic'
@@ -53,37 +52,7 @@ export default function WordPanel() {
     }
 
     }, [state.chapterData.index]);
-  
-  const onSkipWord = useCallback(
-    (type: 'prev' | 'next') => {
-      if (type === 'prev') {
-        dispatch({ type: TypingStateActionType.SKIP_2_WORD_INDEX, newIndex: prevIndex })
-      }
 
-      if (type === 'next') {
-        dispatch({ type: TypingStateActionType.SKIP_2_WORD_INDEX, newIndex: nextIndex })
-      }
-    },
-    [dispatch, prevIndex, nextIndex],
-  )
-
-  useHotkeys(
-    'Ctrl + Shift + ArrowLeft',
-    (e) => {
-      e.preventDefault()
-      onSkipWord('prev')
-    },
-    { preventDefault: true },
-  )
-
-  useHotkeys(
-    'Ctrl + Shift + ArrowRight',
-    (e) => {
-      e.preventDefault()
-      onSkipWord('next')
-    },
-    { preventDefault: true },
-  )
   const [isShowTranslation, setIsHoveringTranslation] = useState(false)
 
   const handleShowTranslation = useCallback((checked: boolean) => {

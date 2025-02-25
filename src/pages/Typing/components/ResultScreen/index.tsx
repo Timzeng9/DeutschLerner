@@ -264,7 +264,7 @@ const ResultScreen = () => {
                   <IconCoffee fontSize={17} className={`text-gray-500 hover:text-amber-500  focus:outline-none ${styles.imgShake}`} />
                 </button>
 
-                <a href="https://github.com/timzeng" target="_blank" rel="noreferrer" className="leading-[0px]">
+                <a href="https://github.com/Timzeng9/DeutschLerner" target="_blank" rel="noreferrer" className="leading-[0px]">
                   <IconGithub fontSize={16} className="text-gray-500 hover:text-green-800 focus:outline-none" />
                 </a>
               </div>

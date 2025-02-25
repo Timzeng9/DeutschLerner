@@ -17,13 +17,6 @@ export default function PrevAndNextWord({ type }: LastAndNextWordProps) {
   const shortCutKey = useMemo(() => (type === 'prev' ? `${CTRL} + Shift + ArrowLeft` : `${CTRL} + Shift + ArrowRight`), [type])
   const currentLanguage = useAtomValue(currentDictInfoAtom).language
 
-  const onClickWord = useCallback(() => {
-    if (!word) return
-
-    if (type === 'prev') dispatch({ type: TypingStateActionType.SKIP_2_WORD_INDEX, newIndex })
-    if (type === 'next') dispatch({ type: TypingStateActionType.SKIP_2_WORD_INDEX, newIndex })
-  }, [type, dispatch, newIndex, word])
-
   const headWord = useMemo(() => {
     if (!word) return ''
 
@@ -39,9 +32,7 @@ export default function PrevAndNextWord({ type }: LastAndNextWordProps) {
   return (
     <>
       {word ? (
-        <Tooltip content={`Shortcut: ${shortCutKey}`}>
           <div
-            onClick={onClickWord}
             className="flex max-w-xs cursor-pointer select-none items-center text-gray-700 opacity-60 duration-200 ease-in-out hover:opacity-100 dark:text-gray-400"
           >
             {type === 'prev' && <IconPrev className="mr-4 shrink-0 grow-0 text-2xl" />}
@@ -63,7 +54,6 @@ export default function PrevAndNextWord({ type }: LastAndNextWordProps) {
             </div>
             {type === 'next' && <IconNext className="ml-4 shrink-0 grow-0 text-2xl" />}
           </div>
-        </Tooltip>
       ) : (
         <div />
       )}
