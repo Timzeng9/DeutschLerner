@@ -1,4 +1,4 @@
-name: Deployment to Github/Gitee pages
+name: Deployment to Github pages
 on:
   push:
     branches:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.17.0]
+        node-version: [22.13.0]
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
