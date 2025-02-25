@@ -10,7 +10,6 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
 const GalleryPage = lazy(() => import('./pages/Gallery'))
-
 function Root() {
   const darkMode = useAtomValue(isOpenDarkModeAtom)
   useEffect(() => {
