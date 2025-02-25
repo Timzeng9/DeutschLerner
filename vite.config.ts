@@ -21,7 +21,7 @@ export default defineConfig(async ({ mode }) => {
     ],
     build: {
       minify: true,
-      outDir: 'docs',
+      outDir: 'build',
       sourcemap: false,
     },
     esbuild: {
