@@ -30,7 +30,7 @@ export default function WordChip({ word }: { word: WordWithIndex }) {
         onClick={onClickWord}
         title={`Pronounce ${word.name}`}
       >
-        <span>{word.wordart} {word.name}</span>
+        <span>{word.name}</span>
       </button>
       {showTranslation && (
         <div
@@ -44,7 +44,7 @@ export default function WordChip({ word }: { word: WordWithIndex }) {
           }}
           {...getFloatingProps()}
         >
-          {word.trans}
+          {word.wordart},{word.trans}
         </div>
       )}
     </>

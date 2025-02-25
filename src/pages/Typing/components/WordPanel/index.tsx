@@ -107,7 +107,7 @@ export default function WordPanel() {
       {state.isGoing && <InfoBox info={`${minutesString}:${secondsString}`} description="Time" />}
       <div className="container flex flex-grow flex-col items-center justify-center">
         {currentWord && (
-          <div className="relative flex w-[90%] justify-center">
+          <div className="relative flex w-[70%] justify-center">
             <div className="relative">
               <WordComponent word={currentWord} clicked_correct={clickedCorrect} key={wordComponentKey} />
               {phoneticConfig.isOpen && <Phonetic word={currentWord} />}
@@ -128,7 +128,7 @@ export default function WordPanel() {
         )}
       </div>
       <Progress className={`mb-10 mt-auto opacity-100`} />
-      <div className="container flex h-15 w-[50%] grow-0 justify-between px-12 pb-10">
+      <div className="container flex h-15 w-[60%] grow-0 justify-between px-12 pb-10">
         <button className={`${styles.commonButton} ${styles.redButton}`} 
           onClick={() => onSelectWordart(WordartType.DER)}
           type="button">
