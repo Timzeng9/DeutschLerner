@@ -12,6 +12,12 @@ export const CONFETTI_DEFAULTS = {
   ticks: 500,
 } as confetti.Options
 
+export const EXPLOSION_DEFAULTS = {
+  colors: ['#FF0000'],
+  shapes: ['circle'],
+  ticks: 250,
+} as confetti.Options
+
 export const defaultFontSizeConfig = {
   foreignFont: 48,
   translateFont: 18,

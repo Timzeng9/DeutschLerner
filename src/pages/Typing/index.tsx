@@ -7,6 +7,7 @@ import Switcher from './components/Switcher'
 import WordList from './components/WordList'
 import WordPanel from './components/WordPanel'
 import { useConfetti } from './hooks/useConfetti'
+import { useExplosion } from './hooks/useExplosion'
 import { useWordList } from './hooks/useWordList'
 import { TypingContext, TypingStateActionType, initialState, typingReducer } from './store'
 import { DonateCard } from '@/components/DonateCard'
@@ -76,7 +77,8 @@ const App: React.FC = () => {
     return () => clearInterval(intervalId)
   }, [state.isGoing, dispatch])
 
-  useConfetti(state.isFinished)
+  useConfetti(state.isFinished&&state.isLastWordartCorrect)
+  useExplosion(state.isFinished&&!state.isLastWordartCorrect)
 
   return (
     <TypingContext.Provider value={{ state: state, dispatch }}>
