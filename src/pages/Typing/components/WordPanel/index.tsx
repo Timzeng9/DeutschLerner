@@ -104,19 +104,11 @@ export default function WordPanel() {
 
   return (
     <div className="container flex h-full w-full flex-col items-center justify-center">
-      <div className="container flex h-24 w-full shrink-0 grow-0 justify-between px-12 pt-10">
-        {isShowPrevAndNextWord && (
-          <>
-            <PrevAndNextWord type="prev" />
-            <PrevAndNextWord type="next" />
-          </>
-        )}
-      </div>
+      {state.isGoing && <InfoBox info={`${minutesString}:${secondsString}`} description="Time" />}
       <div className="container flex flex-grow flex-col items-center justify-center">
         {currentWord && (
-          <div className="relative flex w-full justify-center">
+          <div className="relative flex w-[90%] justify-center">
             <div className="relative">
-              {state.isGoing && <InfoBox info={`${minutesString}:${secondsString}`} description="Time" />}
               <WordComponent word={currentWord} clicked_correct={clickedCorrect} key={wordComponentKey} />
               {phoneticConfig.isOpen && <Phonetic word={currentWord} />}
               <Translation
@@ -136,7 +128,7 @@ export default function WordPanel() {
         )}
       </div>
       <Progress className={`mb-10 mt-auto opacity-100`} />
-      <div className="container flex h-36 w-[40%] shrink-0 grow-0 justify-between px-12 pb-10">
+      <div className="container flex h-15 w-[50%] grow-0 justify-between px-12 pb-10">
         <button className={`${styles.commonButton} ${styles.redButton}`} 
           onClick={() => onSelectWordart(WordartType.DER)}
           type="button">

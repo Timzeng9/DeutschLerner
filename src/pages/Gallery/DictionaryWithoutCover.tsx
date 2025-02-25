@@ -84,7 +84,7 @@ export default function DictionaryComponent({ dictionary }: Props) {
           </div>
         </div>
       </DialogTrigger>
-      <DialogContent className="w-[60rem] max-w-none !rounded-[20px]">
+      <DialogContent className="w-[90%] max-w-none !rounded-[20px]">
         <DictDetail dictionary={dictionary} />
       </DialogContent>
     </Dialog>

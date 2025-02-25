@@ -68,12 +68,12 @@ export default function DictDetail({ dictionary: dict }: { dictionary: Dictionar
 
   return (
     <div className="flex flex-col rounded-[4rem] px-4 py-3 pl-5 text-gray-800 dark:text-gray-300">
-      <div className="text relative flex h-40 flex-col gap-2">
+      <div className="text relative flex  flex-col gap-2 items-start pb-5">
         <h3 className="text-2xl font-semibold">{dict.name}</h3>
         <p className="mt-1">{dict.chapterCount} Chapters</p>
         <p> {dict.length} Words</p>
         <p>{dict.description}</p>
-        <div className="absolute bottom-5 right-4">
+        <div className="mt-auto">
           <ToggleGroup type="single" value={curTab} onValueChange={handleTabChange}>
             <ToggleGroupItem
               value={Tab.Chapters}
