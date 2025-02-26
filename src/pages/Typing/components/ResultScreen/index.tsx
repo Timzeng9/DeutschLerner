@@ -216,9 +216,9 @@ const ResultScreen = () => {
         leaveTo="opacity-0"
       >
         <div className="flex h-screen items-center justify-center">
-          <div className="my-card fixed flex w-[90vw] max-w-6xl flex-col overflow-hidden rounded-3xl bg-white pb-14 pl-10 pr-5 pt-10 shadow-lg dark:bg-gray-800 md:w-4/5 lg:w-3/5">
-            <div className="text-center font-sans text-xl font-normal text-gray-900 dark:text-gray-400 md:text-2xl">
-              {`${currentDictInfo.name} ${isReviewMode ? 'Review' : 'Chapter' + (currentChapter + 1)}`}
+          <div className="my-card fixed flex w-[90%] max-w-6xl flex-col overflow-hidden rounded-3xl bg-white pb-14 pl-10 pr-5 pt-10 shadow-lg dark:bg-gray-800 md:w-4/5 lg:w-3/5">
+            <div className="text-center font-sans font-bold text-white mb-8 text-3xl font-normal dark:text-white md:text-2xl">
+              {`${currentDictInfo.name} ${isReviewMode ? 'Review' : 'Chapter ' + (currentChapter + 1)}`}
             </div>
             <button className="absolute right-7 top-5" onClick={exitButtonHandler}>
               <IconX className="text-gray-400" />

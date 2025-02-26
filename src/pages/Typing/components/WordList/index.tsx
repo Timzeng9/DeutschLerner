@@ -26,7 +26,7 @@ export default function WordList() {
 
   const [isOpen, setIsOpen] = useState(false)
   const currentDictTitleValue = useAtomValue(currentDictTitle)
-
+  
   function closeModal() {
     setIsOpen(false)
   }
@@ -47,7 +47,7 @@ export default function WordList() {
         </button>
       </Tooltip>
 
-      <Drawer open={isOpen} onClose={closeModal} classNames="w-[90%] bg-stone-50 dark:bg-gray-900">
+      <Drawer open={isOpen} onClose={closeModal} classNames="w-[90%] lg:w-[30%] bg-stone-50 dark:bg-gray-900">
         <Dialog.Title as="h1" className="flex items-center justify-between p-4 text-lg font-medium leading-6 dark:text-gray-50">
           {currentDictTitleValue}
           <IconX onClick={closeModal} className="cursor-pointer" />
