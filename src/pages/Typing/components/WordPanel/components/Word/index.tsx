@@ -147,7 +147,6 @@ export default function WordComponent({ word, clicked_correct}: { word: Word; cl
         lang={currentLanguageCategory !== 'code' ? currentLanguageCategory : 'en'}
         className="flex flex-col items-center justify-center pb-1 pt-4"
       >
-        {['romaji', 'hapin'].includes(currentLanguage) && word.notation && <Notation notation={word.notation} />}
         <div
           className={`tooltip-info relative w-fit bg-transparent p-0 leading-normal shadow-none dark:bg-transparent ${
             wordDictationConfig.isOpen ? 'tooltip' : ''

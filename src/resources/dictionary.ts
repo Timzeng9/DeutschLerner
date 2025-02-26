@@ -4,13 +4,13 @@ import { calcChapterCount } from '@/utils'
 // 德语词典
 const germanExam: DictionaryResource[] = [
   {
-    id: 'obst',
-    name: 'obst',
+    id: 'Obst',
+    name: 'Obst',
     description: 'Obst in Deutsch',
     category: 'Deutsches Substantiv',
     tags: ['Basic'],
     url: '/dicts/obst.json',
-    length: 33,
+    length: 20,
     language: 'de',
     languageCategory: 'de',
   },
