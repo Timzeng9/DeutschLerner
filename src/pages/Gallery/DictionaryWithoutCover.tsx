@@ -65,7 +65,7 @@ export default function DictionaryComponent({ dictionary }: Props) {
               </Tooltip>
             </TooltipProvider>
 
-            <p className={`mb-0.5 font-bold  ${isSelected ? 'text-white' : 'text-gray-600 dark:text-gray-200'}`}>{dictionary.length} 词</p>
+            <p className={`mb-0.5 font-bold  ${isSelected ? 'text-white' : 'text-gray-600 dark:text-gray-200'}`}>{dictionary.length} words</p>
             <div className=" flex w-full items-center pt-2">
               {progress > 0 && (
                 <Progress.Root
@@ -84,8 +84,8 @@ export default function DictionaryComponent({ dictionary }: Props) {
           </div>
         </div>
       </DialogTrigger>
-      <DialogContent className="w-[90%] max-w-none !rounded-[20px]">
-        <DictDetail dictionary={dictionary} />
+      <DialogContent className="w-[80%] max-w-none !rounded-[20px]">
+        <DictDetail dictionary={dictionary} classNames='flex flex-col w-[90%] rounded-[4rem] px-4 py-3 pl-5 text-gray-800 dark:text-gray-300'/>
       </DialogContent>
     </Dialog>
   )

@@ -33,12 +33,11 @@ export default function WordList() {
 
   function openModal() {
     setIsOpen(true)
-    dispatch({ type: TypingStateActionType.SET_IS_TYPING, payload: false })
   }
 
   return (
     <>
-      <Tooltip content="List" placement="top" className="!absolute left-5 top-[50%] z-20">
+      <Tooltip content="Words" placement="top" className="!absolute left-5 top-[50%] z-20">
         <button
           type="button"
           onClick={openModal}
@@ -48,8 +47,8 @@ export default function WordList() {
         </button>
       </Tooltip>
 
-      <Drawer open={isOpen} onClose={closeModal} classNames="bg-stone-50 dark:bg-gray-900">
-        <Dialog.Title as="h3" className="flex items-center justify-between p-4 text-lg font-medium leading-6 dark:text-gray-50">
+      <Drawer open={isOpen} onClose={closeModal} classNames="w-[90%] bg-stone-50 dark:bg-gray-900">
+        <Dialog.Title as="h1" className="flex items-center justify-between p-4 text-lg font-medium leading-6 dark:text-gray-50">
           {currentDictTitleValue}
           <IconX onClick={closeModal} className="cursor-pointer" />
         </Dialog.Title>

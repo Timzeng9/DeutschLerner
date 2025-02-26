@@ -40,8 +40,6 @@ export const initialUserInputLog: UserInputLog = {
 export enum TypingStateActionType {
   SETUP_CHAPTER = 'SETUP_CHAPTER',
   SET_IS_SKIP = 'SET_IS_SKIP',
-  SET_IS_TYPING = 'SET_IS_TYPING',
-  TOGGLE_IS_TYPING = 'TOGGLE_IS_TYPING',
   REPORT_WRONG_WORD = 'REPORT_WRONG_WORD',
   REPORT_CORRECT_WORD = 'REPORT_CORRECT_WORD',
   NEXT_WORD = 'NEXT_WORD',
@@ -72,8 +70,6 @@ export enum WordartType {
 export type TypingStateAction =
   | { type: TypingStateActionType.SETUP_CHAPTER; payload: { words: WordWithIndex[]; shouldShuffle: boolean; initialIndex?: number } }
   | { type: TypingStateActionType.SET_IS_SKIP; payload: boolean }
-  | { type: TypingStateActionType.SET_IS_TYPING; payload: boolean }
-  | { type: TypingStateActionType.TOGGLE_IS_TYPING }
   | { type: TypingStateActionType.REPORT_WRONG_WORD; payload: { letterMistake: LetterMistakes } }
   | { type: TypingStateActionType.REPORT_CORRECT_WORD }
   | { type: TypingStateActionType.NEXT_WORD; isLastWordartCorrect: boolean  }
@@ -108,11 +104,6 @@ export const typingReducer = (state: TypingState, action: TypingStateAction) => 
     }
     case TypingStateActionType.SET_IS_SKIP:
       state.isShowSkip = action.payload
-      break
-    case TypingStateActionType.SET_IS_TYPING:
-      break
-
-    case TypingStateActionType.TOGGLE_IS_TYPING:
       break
     case TypingStateActionType.REPORT_CORRECT_WORD: {
       break

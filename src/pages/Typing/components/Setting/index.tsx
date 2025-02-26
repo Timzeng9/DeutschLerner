@@ -23,9 +23,6 @@ export default function Setting() {
 
   function openModal() {
     setIsOpen(true)
-    if (dispatch) {
-      dispatch({ type: TypingStateActionType.SET_IS_TYPING, payload: false })
-    }
   }
 
   return (

@@ -58,12 +58,7 @@
 
     <script>
       // Dark mode init
-      if (
-        ('state' in localStorage && JSON.parse(localStorage.state).darkMode) ||
-        (!('state' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-      ) {
-        document.documentElement.classList.add('dark')
-      }
+      document.documentElement.classList.add('dark')
     </script>
   </head>
   <body>

@@ -19,11 +19,9 @@ import PajamasReviewList from '~icons/pajamas/review-list'
 
 enum Tab {
   Chapters = 'chapters',
-  Errors = 'errors',
-  Review = 'review',
 }
 
-export default function DictDetail({ dictionary: dict }: { dictionary: Dictionary }) {
+export default function DictDetail({ classNames, dictionary: dict }: { classNames: string, dictionary: Dictionary }) {
   const [currentChapter, setCurrentChapter] = useAtom(currentChapterAtom)
   const [currentDictId, setCurrentDictId] = useAtom(currentDictIdAtom)
   const [curTab, setCurTab] = useState<Tab>(Tab.Chapters)
@@ -67,7 +65,7 @@ export default function DictDetail({ dictionary: dict }: { dictionary: Dictionar
   )
 
   return (
-    <div className="flex flex-col rounded-[4rem] px-4 py-3 pl-5 text-gray-800 dark:text-gray-300">
+    <div className={classNames}>
       <div className="text relative flex  flex-col gap-2 items-start pb-5">
         <h3 className="text-2xl font-semibold">{dict.name}</h3>
         <p className="mt-1">{dict.chapterCount} Chapters</p>
@@ -83,18 +81,6 @@ export default function DictDetail({ dictionary: dict }: { dictionary: Dictionar
               <MajesticonsPaperFoldTextLine className="mr-1.5 text-gray-500" />
               Select Chapter
             </ToggleGroupItem>
-            {errorWordData.length > 0 && (
-              <>
-                <ToggleGroupItem
-                  value={Tab.Errors}
-                  disabled={curTab === Tab.Errors}
-                  className={`${curTab === Tab.Errors ? 'text-primary-foreground bg-primary' : ''} disabled:opacity-100`}
-                >
-                  <IcOutlineCollectionsBookmark className="mr-1.5 text-gray-500" />
-                  Your Errors
-                </ToggleGroupItem>
-              </>
-            )}
           </ToggleGroup>
         </div>
       </div>
@@ -114,12 +100,6 @@ export default function DictDetail({ dictionary: dict }: { dictionary: Dictionar
                 ))}
               </div>
             </ScrollArea>
-          </TabsContent>
-          <TabsContent value={Tab.Errors} className="h-full">
-            <ErrorTable data={tableData} isLoading={isLoading} error={error} onDelete={onDelete} />
-          </TabsContent>
-          <TabsContent value={Tab.Review} className="h-full">
-            <ReviewDetail errorData={errorWordData} dict={dict} />
           </TabsContent>
         </Tabs>
       </div>

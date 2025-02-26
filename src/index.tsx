@@ -14,7 +14,8 @@ const GalleryPage = lazy(() => import('./pages/Gallery'))
 function Root() {
   const darkMode = useAtomValue(isOpenDarkModeAtom)
   useEffect(() => {
-    darkMode ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark')
+    document.documentElement.classList.add('dark')
+    // darkMode ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark')
   }, [darkMode])
 
   useEffect(() => {
